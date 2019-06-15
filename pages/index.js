@@ -1,6 +1,9 @@
+import Navbar from '../components/navbar';
+
 const Index = () => (
             <div>
-                 Edited  Welcome to Next js
+                 <Navbar/>
+                 Welcome to Home Page
             </div>
 );
 

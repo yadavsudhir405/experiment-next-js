@@ -1,6 +1,9 @@
+import Navbar from '../components/navbar';
+
 const About = () => (
     <div>
-        <p>This is the About Page</p>
+        <Navbar/>
+        <p>Welcome to Home Page</p>
     </div>
 );
 
