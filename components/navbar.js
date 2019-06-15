@@ -21,6 +21,9 @@ const Navbar = () => (
                 list-style: none;
                 display: flex;
              }
+             ul li {
+                margin-right: 2em;
+             }
         `}
         </style>
     </div>
