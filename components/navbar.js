@@ -4,9 +4,9 @@ const Navbar = () => (
     <div>
         <Link href='/'>
             <a>Home</a>
-        </Link>
+        </Link> |
         <Link href='/about'>
-            <a>about</a>
+            <a> About</a>
         </Link>
     </div>
 
