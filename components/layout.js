@@ -2,17 +2,17 @@ import Navbar from '../components/navbar';
 import Head from 'next/head';
 import Clock from '../components/Clock';
 
-const Layout = (props) => (
-    <div>
-        <Head>
-            <title>Next Demo</title>
-        </Head>
+const withLayout = (Page) => {
+    return () => (
         <div>
+            <Head>
+                <title>Next Demo App</title>
+            </Head>
             <Navbar/>
             <Clock/>
-            {props.children}
+            <Page/>
         </div>
-    </div>
-);
+    );
+};
 
-export default Layout;
+export default withLayout;
