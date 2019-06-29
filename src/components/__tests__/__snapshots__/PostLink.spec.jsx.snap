@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostLink should match the snapshot 1`] = `
+<div>
+  <a
+    href="/p/12"
+  >
+    dummy
+  </a>
+</div>
+`;

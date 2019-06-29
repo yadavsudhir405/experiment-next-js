@@ -2,7 +2,9 @@ module.exports = {
     setupFilesAfterEnv: ['./rtl.setup.js'],
     collectCoverage: true,
     collectCoverageFrom: [
-        'src/**/*.{js,jsx}'
+        'src/**/*.{js,jsx}',
+        '!src/**/index.js',
+        '!src/**/Clock.jsx'
     ],
     coverageReporters: ['json', 'lcov', 'text-summary'],
     coverageThreshold: {

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WithLayout should match the snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      This is dummy Navbar
+    </div>
+    <div>
+      This is dummy Clock
+    </div>
+    <div>
+      This is dummy Component
+    </div>
+  </div>
+</div>
+`;

@@ -2,17 +2,15 @@ import  Head from 'next/head'
 
 import { Clock, Navbar } from "./index";
 
-const withLayout = (Page) => {
-    return () => (
-        <div>
-            <Head>
-                <title>Next Demo App</title>
-            </Head>
-            <Navbar/>
-            <Clock/>
-            <Page/>
-        </div>
-    );
-};
+const withLayout = WrappedComponent => props => (
+    <div>
+        <Head>
+            <title>Next Demo App</title>
+        </Head>
+        <Navbar/>
+        <Clock/>
+        <WrappedComponent {...props} />
+    </div>
+);
 
 export default withLayout;
