@@ -1,5 +1,5 @@
-import PostLink from '../components/PostLink';
-import withLayout from "../components/layout";
+import PostLink from '../src/components/PostLink';
+import withLayout from "../src/components/layout";
 
 const Blog = ()=> (
    <div>

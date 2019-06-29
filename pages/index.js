@@ -1,4 +1,4 @@
-import withLayout from '../components/layout';
+import withLayout from '../src/components/layout';
 
 const Index = () => (
         <div>
