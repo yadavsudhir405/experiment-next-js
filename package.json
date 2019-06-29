@@ -20,11 +20,6 @@
       "git add"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm jest --no-cache"
-    }
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -32,6 +27,7 @@
     "babel-plugin-react-intl": "^3.3.3",
     "babel-plugin-styled-components": "^1.10.1",
     "next": "^8.1.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-jsx": "latest"
