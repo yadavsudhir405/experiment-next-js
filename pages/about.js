@@ -1,4 +1,4 @@
-import withLayout from '../src/components/layout';
+import withLayout from '../src/components/Layout';
 
 const About = () => (
         <div>

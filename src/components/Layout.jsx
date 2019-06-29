@@ -1,6 +1,6 @@
-import Navbar from './navbar';
-import Head from 'next/head';
-import Clock from './clock';
+import  Head from 'next/head'
+
+import { Clock, Navbar } from "./index";
 
 const withLayout = (Page) => {
     return () => (
