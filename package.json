@@ -7,7 +7,23 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src --fix"
+  },
+  "lint-staged": {
+    "*.{js,jsx,css,html,md,json,spec.jsx,spec.js}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm jest --no-cache"
+    }
   },
   "keywords": [],
   "author": "",
@@ -21,14 +37,29 @@
     "styled-jsx": "latest"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
     "@testing-library/react": "^8.0.1",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
     "babel-jest": "^24.8.0",
     "babel-plugin-react-require": "^3.1.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.5.0",
+    "husky": "^2.7.0",
     "jest": "^24.8.0",
     "jest-dom": "^3.5.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
     "react-test-renderer": "^16.8.6"
   }
 }

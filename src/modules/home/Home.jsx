@@ -1,5 +1,10 @@
+import AddToDo from "./Add-Todo";
+
 const Home = () =>(
-    <h1>This is Home page</h1>
+    <div>
+        <h1>This is Home page</h1>
+        <AddToDo/>
+    </div>
 );
 
 export default Home;

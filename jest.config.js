@@ -4,7 +4,8 @@ module.exports = {
     collectCoverageFrom: [
         'src/**/*.{js,jsx}',
         '!src/**/index.js',
-        '!src/**/Clock.jsx'
+        '!src/**/Clock.jsx',
+        '!src/redux/**/*.js'
     ],
     coverageReporters: ['json', 'lcov', 'text-summary'],
     coverageThreshold: {
