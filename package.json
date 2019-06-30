@@ -26,6 +26,7 @@
   "dependencies": {
     "babel-plugin-react-intl": "^3.3.3",
     "babel-plugin-styled-components": "^1.10.1",
+    "formik": "^1.5.7",
     "next": "^8.1.0",
     "next-redux-saga": "^4.0.2",
     "next-redux-wrapper": "^3.0.0-alpha.3",

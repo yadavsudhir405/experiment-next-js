@@ -1,13 +1,17 @@
-import React from 'react';
 import { connect } from 'react-redux';
 
-import AddToDo from '../Add-Todo';
+import AddTodo from '../AddTodo';
 import { addTodo } from '../../../redux/action-creator';
 
-const ref = React.createRef();
-
-const mapDispatchToProps = ({ dispatch }) => ({
-  onClick: dispatch(addTodo(ref.current.value())),
+const mapDispatchToProps = dispatch => ({
+  handleClick: value => {
+    dispatch(addTodo(value));
+  },
 });
 
-export default connect()(AddToDo);
+const mapStateToProps = ({}) => ({});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(AddTodo);

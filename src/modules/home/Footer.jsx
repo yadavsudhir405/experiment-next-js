@@ -1,13 +1,19 @@
-import React from 'react'
-import FilterLink from '../contFilterLink';
+import React from 'react';
 import actions from '../../../src/redux/action';
+import Link from './Link';
 
-const Footer = () => (
+const Footer = ({ setVisibility }) => (
   <div>
     <span>Show: </span>
-    <FilterLink filter={actions.VISIBILITY_FILTER.SHOW_ALL}>All</FilterLink>
-    <FilterLink filter={actions.VISIBILITY_FILTER.SHOW_ACTIVE}>Active</FilterLink>
-    <FilterLink filter={actions.VISIBILITY_FILTER.SHOW_COMPLETED}>Completed</FilterLink>
+    <Link filter={actions.VISIBILITY_FILTER.SHOW_ALL} handleClick={() => setVisibility(actions.VISIBILITY_FILTER.SHOW_ALL)}>
+      All
+    </Link>
+    <Link filter={actions.VISIBILITY_FILTER.SHOW_ACTIVE} handleClick={()=> setVisibility(actions.VISIBILITY_FILTER.SHOW_ACTIVE)}>
+      Active
+    </Link>
+    <Link filter={actions.VISIBILITY_FILTER.SHOW_COMPLETED} handleClick={() => setVisibility(actions.VISIBILITY_FILTER.SHOW_COMPLETED)}>
+      Completed
+    </Link>
   </div>
 );
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Link = ({ active, children, onClick }) => (
+const Link = ({ active, children, handleClick }) => (
   <button
-    onClick={onClick}
+    onClick={handleClick}
     disabled={active}
     style={{
       marginLeft: '4px',
