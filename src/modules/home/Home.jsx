@@ -1,20 +1,16 @@
-import AddToDo from './Add-Todo';
-import VisibleTodoList from './containers/VisibleTodoList';
 import { createStore } from 'redux';
+
+import VisibleTodoList from './containers/VisibleTodoList';
 import todoApp from '../../../src/redux/reducers/todo-app';
 import { Provider } from 'react-redux';
+import AddToDoContainer from './containers/AddToDoContainer';
 
 const store = createStore(todoApp);
-
 
 const Home = () => (
   <Provider store={store}>
     <h1>This is Home page</h1>
-    <ul>
-      <li>A</li>
-      <li>B</li>
-    </ul>
-    <AddToDo />
+    <AddToDoContainer />
     <VisibleTodoList />
   </Provider>
 );
