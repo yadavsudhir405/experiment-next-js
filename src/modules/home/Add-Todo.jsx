@@ -1,8 +1,25 @@
-const AddToDo = ({ addToDo }) => (
-  <div>
-    <input type="text" name="addToDo" />
-    <input type="button" name="Add" value="Add" onClick={addToDo} />
-  </div>
-);
+import { connect } from 'react-redux';
+import { addTodo } from '../../redux/action-creator';
 
-export default AddToDo;
+const AddToDo = ({ dispatch }) => {
+  let input;
+  return (
+    <div>
+      <form
+        onSubmit={e => {
+          e.preventDefault();
+          if (!input.value.trim()) {
+            return;
+          }
+          dispatch(addTodo(input.value));
+          input.value = '';
+        }}
+      >
+        <input type="text" name="addToDo" ref={node => (input = node)} />
+        <input type="submit" name="Add" value="Submit" />
+      </form>
+    </div>
+  );
+};
+
+export default connect()(AddToDo);

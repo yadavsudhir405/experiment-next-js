@@ -1,8 +1,8 @@
-import actions from 'src/redux/action';
+import * as actions from '../action';
 
-const visibilityFilter = (state = actions.SHOW_ALL, action) => {
+const visibilityFilter = (state = actions.default.SHOW_ALL, action) => {
   switch (action.type) {
-    case actions.SET_VISIBILITY_FILTER:
+    case actions.default.SET_VISIBILITY_FILTER:
       return action.filter;
 
     default:

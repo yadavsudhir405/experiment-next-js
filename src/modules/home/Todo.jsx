@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-const Todo = ({ addToDo, completed, text }) => (
-  <div>
-    <li onClick={addToDo}>{text}</li>
-  </div>
+const Todo = ({ onClick, completed, text }) => (
+  <li onClick={onClick}>
+    {text}
+  </li>
 );
 
 Todo.propTypes = {
