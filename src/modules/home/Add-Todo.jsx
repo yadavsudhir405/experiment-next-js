@@ -1,17 +1,17 @@
 import { addTodo } from '../../redux/action-creator';
 
 let input;
-const AddToDo = (props) => {
+const AddToDo = ({ dispatch }) => {
   return (
     <div>
-      <input type="text" name="addToDo" ref={(node => (input = node))} />
+      <input type="text" name="addToDo" ref={node => (input = node)} />
       <input
         type="button"
         name="Add"
         value="Submit"
         onClick={event => {
           event.preventDefault();
-          props.dispatch(addTodo(input.value));
+          dispatch(addTodo(input.value));
           input.value = '';
         }}
       />
