@@ -9,7 +9,9 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const mapStateToProps = ({}) => ({});
+const mapStateToProps = (state) => ({
+  cities: ['Bangalore', 'Delhi', 'Pune', 'NewDelhi']
+});
 
 export default connect(
   mapStateToProps,
