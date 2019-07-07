@@ -10,14 +10,6 @@ const dev = process.env.NODE_ENV === 'development';
 const app = next({ dev, dir: './src' });
 const handle = app.getRequestHandler();
 
-const authServiceProxy = proxy({
-  target: process.env.AUTH_SERVICE,
-  changeOrigin: true,
-  pathRewrite: {
-    [`^/auth-service`]: '',
-  },
-});
-
 app.prepare().then(() => {
   const server = express();
 
@@ -28,7 +20,6 @@ app.prepare().then(() => {
     return handle(req, res);
   });
 
-  server.use(`/auth-service`, authServiceProxy);
 
   server.listen(port, err => {
     if (err) throw err;
