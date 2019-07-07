@@ -1,34 +1,37 @@
 import React from 'react';
-import { Field, Form, withFormik } from 'formik';
-import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import { withFormik } from 'formik';
 
-const AddTodoForm = ({ handleSubmit, cities }) => {
+const AddTodoForm = ({ values, handleSubmit, handleChange }) => {
   return (
-    <Form onSubmit={handleSubmit}>
-      <Field name="todoText" type="text" /> <br/>
-      <Field name="city" component="select" placeholder="Select Cities">
-        {cities.map(city => <option value={city}>{city}</option>)}
-      </Field>
-      <Field type="submit" value="Submit" />
-    </Form>
+    <form onSubmit={handleSubmit}>
+      <TextField
+        id="outlined-name"
+        name="todoText"
+        label="Name"
+        margin="normal"
+        variant="outlined"
+        value={values.todoText}
+        onChange={handleChange}
+      />
+      <br />
+      <Button type="submit" variant="contained" color="primary">
+        Submit
+      </Button>
+    </form>
   );
 };
 
-const handleSubmit = (values, { props, setSubmitting }) => {
-  const { city } = values;
-  props.handleClick(city);
-  //values.todoText = '';
-  setSubmitting(false);
+const formikOptions = {
+  handleChange: (event, values) => {
+    values[event.target.key] = event.target.value;
+  },
+  mapPropsToValues: props => ({ todoText: props.initialValue }),
+  handleSubmit: (values, { props, setSubmitting }) => {
+    props.handleClick(values.todoText);
+    setSubmitting(false);
+  },
 };
 
-AddTodoForm.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
-};
-
-
-const AddTodo = withFormik({
-  mapPropsToValues: (props) => ({ todoText: props.cities[0], city: props.cities[0] }),
-  handleSubmit,
-})(AddTodoForm);
-
-export default AddTodo;
+export default withFormik(formikOptions)(AddTodoForm);
