@@ -1,11 +1,12 @@
+require('dotenv').config();
 module.exports = {
   setupFilesAfterEnv: ['./rtl.setup.js'],
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.{js,jsx}',
-    '!src/**/index.js',
-    '!src/**/Clock.jsx',
-    '!src/redux/**/*.js',
+    '!src/redux/store.js',
+    '!src/pages/_app.jsx',
+    '!src/pages/_document.jsx',
   ],
   coverageReporters: ['json', 'lcov', 'text-summary'],
   coverageThreshold: {
@@ -17,5 +18,8 @@ module.exports = {
     },
   },
   testPathIgnorePatterns: ['coverage'],
-  coveragePathIgnorePatterns: ['src/constants/'],
+  coveragePathIgnorePatterns: ['src/constants/', 'src/icons/'],
+  moduleNameMapper: {
+    '\\.(css)$': '<rootDir>/src/__mocks__/styleMock.js',
+  },
 };
